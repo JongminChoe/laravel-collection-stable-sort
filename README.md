@@ -7,7 +7,7 @@ You have to install this package mannually.
 
 1. Copy `CollectionStableSortServiceProvider.php` file to your Laravel Application's `app/providers` directory.
 2. Register service provider by adding line below in `config/app.php` file's `provider` array.
-  `App\Providers\CollectionStableSortServiceProvider::class`
+  `App\Providers\CollectionStableSortServiceProvider::class`  
   or check [this](https://laravel.com/docs/6.x/providers#registering-providers) to how to register service provider.
 
 ## Requirements
@@ -44,9 +44,6 @@ $collection->stableSort(function ($a, $b) { ... });
 ```
 
 ### Sort by multiple fields
-sort by 'first' field in ascending order first  
-if 'first' field is equal, then sort by 'second' field in descending order  
-if 'second' field is also same, then sort by callback function like PHP's usort() function.
 ```php
 $collection->stableSort([
     'first',
@@ -54,6 +51,10 @@ $collection->stableSort([
     function ($a, $b) { ... },
 ]);
 ```
+Explanation
+> 1. sort by 'first' field in ascending order first  
+> 2. if 'first' field is equal, then sort by 'second' field in descending order  
+> 3. if 'second' field is also same, then sort by callback function like PHP's usort() function.
 
 ## License
 ```
