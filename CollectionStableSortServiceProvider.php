@@ -38,11 +38,7 @@ class CollectionStableSortServiceProvider extends ServiceProvider
                 return $item;
             })->all();
         
-            $condition = static::wrap(
-                $callback ?? [function ($a, $b) {
-                    return $a['value'] <=> $b['value'];
-                }]
-            )->all(); 
+            $condition = static::wrap($callback ?? [null])->all();
         
             $callback = function ($a, $b) use ($condition) {
                 foreach ($condition as $key => $order) {
