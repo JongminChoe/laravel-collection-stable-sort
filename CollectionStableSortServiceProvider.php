@@ -2,13 +2,13 @@
 
 /**
  * Copyright 2020 Jongmin Choe
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -37,9 +37,9 @@ class CollectionStableSortServiceProvider extends ServiceProvider
                 $position++;
                 return $item;
             })->all();
-        
+
             $condition = static::wrap($callback ?? [null])->all();
-        
+
             $callback = function ($a, $b) use ($condition) {
                 foreach ($condition as $key => $order) {
                     if (is_int($key)) {
@@ -52,20 +52,20 @@ class CollectionStableSortServiceProvider extends ServiceProvider
                     else {
                         $order = 1;
                     }
-        
+
                     $result = $key instanceof \Closure
                         ? $key($a['value'], $b['value'])
                         : $order * (data_get($a['value'], $key) <=> data_get($b['value'], $key));
-        
+
                     if ($result !== 0) {
                         return $result;
                     }
                 }
                 return $a['position'] <=> $b['position'];
             };
-        
+
             uasort($items, $callback);
-        
+
             return (new static($items))->map->value;
         });
     }
