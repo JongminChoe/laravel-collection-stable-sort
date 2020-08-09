@@ -1,5 +1,6 @@
-# laravel-collection-stable-sort
+# Laravel Collection Stable Sort
 Stable sort macro for Laravel Collection
+Also supports sort by multiple fields
 
 ## Installation
 This package **DOES NOT** support install as a Composer Dependency.  
