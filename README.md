@@ -5,10 +5,10 @@ Stable sort macro for Laravel Collection
 This package **DOES NOT** support install as a Composer Dependency.  
 You have to install this package manually.
 
-1. Copy `CollectionStableSortServiceProvider.php` file to your Laravel Application's `app/providers` directory.
-2. Register service provider by adding a line below in `config/app.php` file's `provider` array.
+1. Copy `CollectionStableSortServiceProvider.php` file to your Laravel Application's `app/Providers` directory.
+2. Register service provider by adding a line below in `config/app.php` file's `providers` array.
   `App\Providers\CollectionStableSortServiceProvider::class`  
-  or check [this](https://laravel.com/docs/6.x/providers#registering-providers) to how to register service provider.
+  or check [this](https://laravel.com/docs/6.x/providers#registering-providers) to how to register a service provider.
 
 ## Requirements
 * PHP >= 7.0  
