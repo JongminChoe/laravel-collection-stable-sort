@@ -3,10 +3,10 @@ Stable sort macro for Laravel Collection
 
 ## Installation
 This package **DOES NOT** support install as a Composer Dependency.  
-You have to install this package mannually.
+You have to install this package manually.
 
 1. Copy `CollectionStableSortServiceProvider.php` file to your Laravel Application's `app/providers` directory.
-2. Register service provider by adding line below in `config/app.php` file's `provider` array.
+2. Register service provider by adding a line below in `config/app.php` file's `provider` array.
   `App\Providers\CollectionStableSortServiceProvider::class`  
   or check [this](https://laravel.com/docs/6.x/providers#registering-providers) to how to register service provider.
 
@@ -54,7 +54,7 @@ $collection->stableSort([
 Explanation
 > 1. sort by 'first' field in ascending order first  
 > 2. if 'first' field is equal, then sort by 'second' field in descending order  
-> 3. if 'second' field is also same, then sort by callback function like PHP's usort() function.
+> 3. if 'second' field is also same, then sort by the callback function (same as PHP's [`usort()`](https://www.php.net/manual/en/function.usort.php) function)
 
 ## License
 ```
