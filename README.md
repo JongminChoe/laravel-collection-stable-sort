@@ -1,5 +1,5 @@
 # Laravel Collection Stable Sort
-Stable sort macro for Laravel Collection
+Stable sort macro for Laravel Collection  
 Also supports sort by multiple fields
 
 ## Installation
